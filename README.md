@@ -1,6 +1,15 @@
 # Resume_Portfolio_Projects
 Progression with my python skill level.
 
-This folder will contain folder of course work i do fo certifications as well as project codes I have used to make my, or other peoples jobs, easier and more efficent.
+Work Projects:
+    active work assignments that were automated. Simple yet effective for multiple dataframes.
 
-If its not in a folder the codes are learning codes for ranom data anyslis practice, or other aspect I amd trying to import on. 
+
+Automate the boring Stuff:
+    This folder contain codes and information from the book and the UDEMY certifcate class. Main objective to push me in the write direction to instanly start writing code for     automating office work. 
+
+Practice Problem:
+    This folder will be here for problem I have worked on in the past, and will help me teach other in the future.
+    
+Other files:
+    These are file that were used on random data to test out new skill set to put into future or update old codes with. 
