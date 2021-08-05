@@ -13,5 +13,5 @@ Automate the boring Stuff:
 Practice Problem:
     This folder will be here for problem I have worked on in the past, and will help me teach other in the future.
     
-Other files:
-    These are file that were used on random data to test out new skill set to put into future or update old codes with. 
+Random Projects:
+    These are file that were used on random data to test out/improve new skills set to put into future or update old codes with. 
