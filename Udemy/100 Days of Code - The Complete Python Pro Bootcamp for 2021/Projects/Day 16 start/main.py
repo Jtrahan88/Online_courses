@@ -7,7 +7,7 @@ coffee_maker = CoffeeMaker()
 money_machine = MoneyMachine()
 
 
-# object to get menu items
+# object to get menu items.
 menu = Menu()
 
 # turn coffee machine on or off
