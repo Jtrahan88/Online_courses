@@ -1,0 +1,47 @@
+# find the number of events that occur for each day
+
+SELECT 
+    DATE_TRUNC('day',occurred_at) AS day,
+    channel, COUNT(*) as events
+FROM web_events
+GROUP BY 1,2
+ORDER BY 3 DESC;
+
+# Get the entire table above. After teh from is the subquery. 
+
+SELECT *
+FROM (SELECT DATE_TRUNC('day',occurred_at) AS day,
+           channel, COUNT(*) as events
+     FROM web_events 
+     GROUP BY 1,2
+     ORDER BY 3 DESC) sub;
+     
+# get the number of average events by channel from teh above tables
+
+SELECT channel, AVG(events) AS average_events
+FROM (SELECT DATE_TRUNC('day',occurred_at) AS day,
+             channel, COUNT(*) as events
+      FROM web_events 
+      GROUP BY 1,2) sub
+GROUP BY channel
+ORDER BY 2 DESC;
+
+# Using the DATE_TRUNC(DATE_PART for teh month number) function to grab a part of a date from a column. Get teh first month from the orders table:
+SELECT 
+  DATE_TRUNC('month', MIN(occurred_at)) 
+FROM orders;
+
+# Get the average for each column within that first month:
+SELECT AVG(standard_qty) avg_std, AVG(gloss_qty) avg_gls, AVG(poster_qty) avg_pst
+FROM orders
+WHERE DATE_TRUNC('month', occurred_at) = 
+     (SELECT DATE_TRUNC('month', MIN(occurred_at)) FROM orders);
+     
+# Get teh total sold amount within that first month:
+SELECT
+  SUM(total_amt_usd)
+FROM orders
+WHERE 
+  DATE_TRUNC('month', occurred_at) = 
+      (SELECT DATE_TRUNC('month', MIN(occurred_at)) FROM orders);
+      
