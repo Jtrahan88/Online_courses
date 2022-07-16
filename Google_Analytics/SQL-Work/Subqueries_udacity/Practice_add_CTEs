@@ -2,7 +2,7 @@
 
 # Find the name of each sales rep with teh highest sales(hint some regions rank at the top multiple times) 
 
-# Made this in thre steps. Step 1 find your sum total for each region:
+# Made this in three steps. Step 1 find your sum total for each region:
 SELECT 
   s.name AS sales_rep, r.name AS region, MAX(total_amt_usd) AS total
 
@@ -18,7 +18,7 @@ SELECT
 	  ON o.account_id = a.id
 	GROUP BY 1, 2
 
-# STEP 2 get teh highest amout for each region using teh above table
+# STEP 2 get the highest amout for each region using the above table
 SELECT 
   region, MAX(total) AS high_total
 FROM	
@@ -39,7 +39,7 @@ FROM
     GROUP BY 1;
    
  # STEP 3 Bring it all together by joining the top two table with teh orginal table:
- SELECT sub3.sales_rep, sub3.region, sub2.high_total
+SELECT sub3.sales_rep, sub3.region, sub2.high_total
 FROM
 (SELECT region, MAX(total) AS high_total
 FROM	
@@ -78,7 +78,7 @@ ON sub3.region = sub2.region AND sub3.total = sub2.high_total;
 
 
 
-Make the ABOVE as a CTE (MUCH easier to read)
+# Make the ABOVE as a CTE (MUCH easier to read)
 
 WITH sub1 AS (
         SELECT 
